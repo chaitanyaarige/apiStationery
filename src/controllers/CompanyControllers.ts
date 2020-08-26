@@ -1,16 +1,16 @@
 import { Router, Request, Response } from "express";
-import { OrdersService } from "../services/OrdersService"
+import { CompanyService } from "../services/CompanyService"
 
-export class OrdersControllers {
-  private componentName: string = "OrdersControllers";
+export class CompanyControllers {
+  private componentName: string = "CompanyControllers";
   private router: Router = Router();
-  private service: any = new OrdersService();
+  private service: any = new CompanyService();
 
   getRouter(): Router {
     this.router.get("/", async (request: Request, response: Response) => {
       try {
-        let orders = await this.service.findAll();
-        response.send({ status: 1, data: orders });
+        let company = await this.service.findAll();
+        response.send({ status: 1, data: company });
       } catch (error) {
         console.log(error);
         response.send({ status: 0, error: error });
@@ -22,8 +22,8 @@ export class OrdersControllers {
         let reqData: any;
         reqData = request.body ? request.body : {};
         this.service.sessionInfo = request.body.sessionInfo;
-        let orders = await this.service.saveOne(reqData);
-        response.send({ status: 1, data: orders });
+        let company = await this.service.saveOne(reqData);
+        response.send({ status: 1, data: company });
       } catch (error) {
         console.log(error);
         response.send({ status: 0, error: error });

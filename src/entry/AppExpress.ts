@@ -1,9 +1,9 @@
 import express from "express";
 import cors from "cors";
 import { json, urlencoded } from "body-parser";
-import { ProductControllers } from "../controllers/ProductControllers";
-import { SupplierControllers } from "../controllers/SupplierControllers";
-import { OrdersControllers } from "../controllers/OrdersControllers";
+import { SchoolControllers } from "../controllers/SchoolControllers";
+import { CompanyControllers } from "../controllers/CompanyControllers";
+import { StationeryControllers } from "../controllers/StationeryControllers";
 
 export default class AppExpress {
   public express: any;
@@ -24,9 +24,9 @@ export default class AppExpress {
     });
     this.express.use("/", router);
     this.express.use(cors())
-    this.express.use("/api/products", await new ProductControllers().getRouter())
-    this.express.use("/api/suppliers", await new SupplierControllers().getRouter())
-    this.express.use("/api/orders", await new OrdersControllers().getRouter())
+    this.express.use("/api/schools", await new SchoolControllers().getRouter())
+    this.express.use("/api/companies", await new CompanyControllers().getRouter())
+    this.express.use("/api/stationery", await new StationeryControllers().getRouter())
   }
 
 
