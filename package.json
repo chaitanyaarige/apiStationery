@@ -1,0 +1,48 @@
+{
+  "name": "sss",
+  "version": "1.0.0",
+  "description": "sss",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^5.0.0-alpha.1",
+    "node-cache": "^5.1.0",
+    "pg": "^8.2.1",
+    "pg-hstore": "^2.3.3",
+    "reflect-metadata": "^0.1.13",
+    "swagger-jsdoc": "^3.3.0",
+    "swagger-ui-express": "^4.0.7",
+    "typeorm": "^0.2.18"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.17.0",
+    "@types/cors": "^2.8.7",
+    "@types/express": "^4.17.6",
+    "@types/node": "^14.0.19",
+    "nodemon": "^2.0.4",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.3"
+  },
+  "scripts": {
+    "start": "npm run build:live",
+    "build": "rimraf ./dist && tsc -p .",
+    "build:live": "nodemon --watch 'src/**/*.ts' --exec ts-node src/index.ts",
+    "live": "nodemon --watch src/**/*.ts --exec ts-node src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chaitanyaarige/learnBackend.git"
+  },
+  "engines": {
+    "node": "14.x"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chaitanyaarige/learnBackend/issues"
+  },
+  "homepage": "https://github.com/chaitanyaarige/learnBackend#readme"
+}
