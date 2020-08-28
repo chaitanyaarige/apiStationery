@@ -14,12 +14,6 @@ export class Company {
   @Column({name:"city"})
   city: string;
 
-  // @Column("int",{array: true, name:"product_category"})
-  // product_category: [];
-
-  // @Column({name: "sizes", type: 'jsonb', nullable: true })
-  // sizes: Object;
-
   @Column({nullable: true, name:"phone"})
   phone: number;
 
