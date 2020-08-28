@@ -9,8 +9,8 @@ export class SchoolControllers {
   getRouter(): Router {
     this.router.get("/", async (request: Request, response: Response) => {
       try {
-        let school = await this.service.findAll();
-        response.status(200).send({ school });
+        let schools = await this.service.findAll();
+        response.status(200).send({ schools });
       } catch (error) {
         console.log(error);
         response.status(400).send({ error });
