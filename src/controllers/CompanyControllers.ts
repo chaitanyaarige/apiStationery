@@ -10,10 +10,10 @@ export class CompanyControllers {
     this.router.get("/", async (request: Request, response: Response) => {
       try {
         let company = await this.service.findAll();
-        response.send({ status: 1, data: company });
+        response.status(200).send({ company });
       } catch (error) {
         console.log(error);
-        response.send({ status: 0, error: error });
+        response.status(400).send({ error });
       }
     });
 
@@ -23,10 +23,10 @@ export class CompanyControllers {
         reqData = request.body ? request.body : {};
         this.service.sessionInfo = request.body.sessionInfo;
         let company = await this.service.saveOne(reqData);
-        response.send({ status: 1, data: company });
+        response.status(200).send({ company });
       } catch (error) {
         console.log(error);
-        response.send({ status: 0, error: error });
+        response.status(400).send({ error });
       }
     });
 

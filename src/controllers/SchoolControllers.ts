@@ -9,11 +9,11 @@ export class SchoolControllers {
   getRouter(): Router {
     this.router.get("/", async (request: Request, response: Response) => {
       try {
-        let school = await this.service.findAll();
-        response.send({ status: 1, data: school });
+        let schools = await this.service.findAll();
+        response.status(200).send({ schools });
       } catch (error) {
         console.log(error);
-        response.send({ status: 0, error: error });
+        response.status(400).send({ error });
       }
     });
 
@@ -23,10 +23,10 @@ export class SchoolControllers {
         reqData = request.body ? request.body : {};
         this.service.sessionInfo = request.body.sessionInfo;
         let school = await this.service.saveOne(reqData);
-        response.send({ status: 1, data: school });
+        response.status(200).send({ school });
       } catch (error) {
         console.log(error);
-        response.send({ status: 0, error: error });
+        response.status(400).send({ error });
       }
     });
 

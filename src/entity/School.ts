@@ -1,7 +1,7 @@
 import { Entity, PrimaryGeneratedColumn, PrimaryColumn, Column, ManyToOne, JoinColumn, Double, OneToMany, OneToOne, Timestamp } from "typeorm";
 
-@Entity("company")
-export class Company {
+@Entity("school")
+export class School {
   @PrimaryGeneratedColumn({name:"id"})
   id: number;
 
@@ -13,6 +13,12 @@ export class Company {
 
   @Column({name:"city"})
   city: string;
+
+  // @Column("int",{array: true, name:"product_category"})
+  // product_category: [];
+
+  // @Column({name: "sizes", type: 'jsonb', nullable: true })
+  // sizes: Object;
 
   @Column({nullable: true, name:"phone"})
   phone: number;
