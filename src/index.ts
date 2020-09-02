@@ -11,7 +11,7 @@ let dbOptions: any = {
   username:  process.env.HEROKU_USERNAME || "postgres",
   password:  process.env.HEROKU_PASSWORD || "postgres",
   database:  process.env.HEROKU_DATABASE || "pharmacy",
-  url: process.env.HEROKU_URL || '',
+  url: process.env.DATABASE_URL ? process.env.DATABASE_URL : process.env.HEROKU_URL,
   synchronize: true,
   logging: false,
   entities: process.env.HEROKU ? ["dist/entity/*{.ts,.js}"] : ["src/entity/*{.ts,.js}"],
