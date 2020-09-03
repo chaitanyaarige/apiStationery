@@ -14,7 +14,7 @@ export class Company {
   @Column({name:"city"})
   city: string;
 
-  @Column({name:"phone"})
+  @Column({name:"phone", nullable: true})
   phone: string;
 
   @Column('timestamp')
