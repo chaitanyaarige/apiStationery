@@ -15,7 +15,7 @@ export class Company {
   city: string;
 
   @Column({nullable: true, name:"phone"})
-  phone: number;
+  phone: string;
 
   @Column('timestamp')
   created_at: Timestamp;

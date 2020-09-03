@@ -8,20 +8,14 @@ export class School {
   @Column({name:"name"})
   name: string;
 
-  @Column({name:"address"})
+  @Column({name:"address", nullable: true})
   address: string;
 
   @Column({name:"city"})
   city: string;
 
-  // @Column("int",{array: true, name:"product_category"})
-  // product_category: [];
-
-  // @Column({name: "sizes", type: 'jsonb', nullable: true })
-  // sizes: Object;
-
-  @Column({nullable: true, name:"phone"})
-  phone: number;
+  @Column({name:"phone"})
+  phone: string;
 
   @Column('timestamp')
   created_at: Timestamp;

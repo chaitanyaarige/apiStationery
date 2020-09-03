@@ -20,7 +20,13 @@ export class Stationery {
   @Column({nullable: true, name:"post_gst"})
   post_gst: number;
 
-  @Column({name:"unit_price"})
+  // @Column("int",{array: true, name:"product_category"})
+  // product_category: [];
+
+  // @Column({name: "sizes", type: 'jsonb', nullable: true })
+  // sizes: Object;
+
+  @Column({name:"unit_price", type: "decimal", precision: 2, scale: 2,})
   unit_price: number;
 
   @Column('timestamp')
