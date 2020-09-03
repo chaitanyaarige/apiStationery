@@ -8,13 +8,13 @@ export class Company {
   @Column({name:"name"})
   name: string;
 
-  @Column({name:"address"})
+  @Column({name:"address", nullable: true})
   address: string;
 
   @Column({name:"city"})
   city: string;
 
-  @Column({nullable: true, name:"phone"})
+  @Column({name:"phone"})
   phone: string;
 
   @Column('timestamp')

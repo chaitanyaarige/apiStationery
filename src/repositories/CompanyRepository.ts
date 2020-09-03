@@ -23,9 +23,22 @@ export class CompanyRepository {
     return await this.dao.find();
   }
 
-  async delete(data: any) {
-    data.active = !data.active;
-    return await this.dao.save(data);
+  async editOne(data: Company) {
+    return await this.dao
+    .createQueryBuilder("school")
+    .update(Company)
+    .set({ name: data.name , address: data.address, phone: data.phone, city: data.city,})
+    .where("id = :id", { id: data.id })
+    .execute();
+  }
+
+  async delete(id: any) {
+    return await this.dao
+    .createQueryBuilder()
+    .delete()
+    .from(Company)
+    .where("id = :id", { id: id })
+    .execute();
   }
 
   async findOne(data: any) {
