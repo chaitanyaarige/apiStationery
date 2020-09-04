@@ -19,6 +19,10 @@ export class SchoolRepository {
     return await this.dao.save(data);
   }
 
+  async findAll() {
+    return await this.dao.find();
+  }
+
   async editOne(data: School) {
     return await this.dao
     .createQueryBuilder("school")
@@ -26,10 +30,6 @@ export class SchoolRepository {
     .set({ name: data.name , address: data.address, phone: data.phone, city: data.city,})
     .where("id = :id", { id: data.id })
     .execute();
-  }
-
-  async findAll() {
-    return await this.dao.find();
   }
 
   async delete(id: any) {
