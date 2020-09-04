@@ -8,14 +8,14 @@ export class Company {
   @Column({name:"name"})
   name: string;
 
-  @Column({name:"address"})
+  @Column({name:"address", nullable: true})
   address: string;
 
   @Column({name:"city"})
   city: string;
 
-  @Column({nullable: true, name:"phone"})
-  phone: number;
+  @Column({name:"phone", nullable: true})
+  phone: string;
 
   @Column('timestamp')
   created_at: Timestamp;

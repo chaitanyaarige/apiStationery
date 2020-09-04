@@ -37,6 +37,24 @@ export class SchoolService {
     }
   }
 
+  async editOne(datas: School) {
+    try {
+      let data: any = await this.schoolRepository.editOne(datas);
+      return data;
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  async deleteOne(id: School) {
+    try {
+      let data: any = await this.schoolRepository.delete(id);
+      return data;
+    } catch (error) {
+      throw error;
+    }
+  }
+
   async saveOne(datas: School) {
     try {
       let data: any = await this.schoolRepository.saveOne(datas);

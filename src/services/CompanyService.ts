@@ -37,6 +37,24 @@ export class CompanyService {
     }
   }
 
+  async editOne(datas: Company) {
+    try {
+      let data: any = await this.companyRepository.editOne(datas);
+      return data;
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  async deleteOne(id: Company) {
+    try {
+      let data: any = await this.companyRepository.delete(id);
+      return data;
+    } catch (error) {
+      throw error;
+    }
+  }
+
   async saveOne(datas: Company) {
     try {
       let data: any = await this.companyRepository.saveOne(datas);

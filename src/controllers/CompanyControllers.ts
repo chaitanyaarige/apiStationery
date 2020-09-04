@@ -30,6 +30,43 @@ export class CompanyControllers {
       }
     });
 
+
+    this.router.get("/:id", async (request: Request, response: Response) => {
+      try {
+        let company = await this.service.findOne();
+        response.status(200).send({ company });
+      } catch (error) {
+        console.log(error);
+        response.status(400).send({ error });
+      }
+    });
+
+    this.router.patch("/:id", async (request: Request, response: Response) => {
+      try {
+        let reqData: any;
+        reqData = request.body ? request.body : {};
+        this.service.sessionInfo = request.body.sessionInfo;
+        let company = await this.service.editOne(reqData);
+        response.status(201).send({ company });
+      } catch (error) {
+        console.log(error);
+        response.status(400).send({ error });
+      }
+    });
+
+    this.router.delete("/:id", async (request: Request, response: Response) => {
+      try {
+        let reqData: any;
+        reqData = request.params ? request.params.id : {};
+        // this.service.sessionInfo = request.body.sessionInfo;
+        let company = await this.service.deleteOne(reqData);
+        response.status(204).send({ company });
+      } catch (error) {
+        console.log(error);
+        response.status(400).send({ error });
+      }
+    });
+
     return this.router;
   }
 }

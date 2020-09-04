@@ -37,6 +37,24 @@ export class StationeryService {
     }
   }
 
+  async editOne(datas: Stationery) {
+    try {
+      let data: any = await this.stationeryRepository.editOne(datas);
+      return data;
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  async deleteOne(id: Stationery) {
+    try {
+      let data: any = await this.stationeryRepository.delete(id);
+      return data;
+    } catch (error) {
+      throw error;
+    }
+  }
+
   async saveOne(datas: Stationery) {
     try {
       let data: any = await this.stationeryRepository.saveOne(datas);
