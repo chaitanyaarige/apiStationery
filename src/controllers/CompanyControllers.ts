@@ -60,7 +60,7 @@ export class CompanyControllers {
         reqData = request.params ? request.params.id : {};
         // this.service.sessionInfo = request.body.sessionInfo;
         let company = await this.service.deleteOne(reqData);
-        response.status(201).send({ company });
+        response.status(204).send({ company });
       } catch (error) {
         console.log(error);
         response.status(400).send({ error });

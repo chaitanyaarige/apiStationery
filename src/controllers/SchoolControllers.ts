@@ -59,7 +59,7 @@ export class SchoolControllers {
         reqData = request.params ? request.params.id : {};
         // this.service.sessionInfo = request.body.sessionInfo;
         let school = await this.service.deleteOne(reqData);
-        response.status(201).send({ school });
+        response.status(204).send({ school });
       } catch (error) {
         console.log(error);
         response.status(400).send({ error });

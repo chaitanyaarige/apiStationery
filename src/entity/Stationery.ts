@@ -14,10 +14,10 @@ export class Stationery {
   @Column({name:"manufacturer"})
   manufacturer: string;
 
-  @Column({nullable: true, name:"pre_gst"})
+  @Column({nullable: true, type: "decimal", precision: 2, name:"pre_gst"})
   pre_gst: number;
 
-  @Column({nullable: true, name:"post_gst"})
+  @Column({nullable: true, type: "decimal", precision: 2, name:"post_gst"})
   post_gst: number;
 
   // @Column("int",{array: true, name:"product_category"})
@@ -26,9 +26,12 @@ export class Stationery {
   // @Column({name: "sizes", type: 'jsonb', nullable: true })
   // sizes: Object;
 
-  @Column({name:"unit_price", type: "decimal", precision: 2, scale: 2,})
+  @Column({name:"unit_price", type: "decimal", precision: 6, scale: 2,})
   unit_price: number;
 
-  @Column('timestamp')
+  @Column({ nullable: true, type: 'timestamp'})
+  updated_at: Timestamp;
+
+  @Column({ type: 'timestamp'})
   created_at: Timestamp;
 }
