@@ -29,6 +29,7 @@ export class StationeryRepository {
     .update(Stationery)
     .set({ prod_name: data.prod_name , prod_code: data.prod_code,
       manufacturer: data.manufacturer, pre_gst: data.pre_gst,
+      post_gst: data.post_gst,  quantity: data.quantity,
       unit_price: data.unit_price, updated_at: data.updated_at})
     .where("id = :id", { id: data.id })
     .execute();
