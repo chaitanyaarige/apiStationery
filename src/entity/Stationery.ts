@@ -26,6 +26,9 @@ export class Stationery {
   // @Column({name: "sizes", type: 'jsonb', nullable: true })
   // sizes: Object;
 
+  @Column({nullable: true, name:"quantity"})
+  quantity: number;
+
   @Column({name:"unit_price", type: "decimal", precision: 6, scale: 2,})
   unit_price: number;
 
