@@ -5,6 +5,9 @@ export class Order {
   @PrimaryGeneratedColumn({name:"id"})
   id: number;
 
+  @Column({name:"invoice"})
+  invoice: string;
+
   @Column({name:"buyer"})
   buyer: string;
 
