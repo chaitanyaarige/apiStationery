@@ -37,24 +37,6 @@ export class OrderService {
     }
   }
 
-  async editOne(datas: Order) {
-    try {
-      let data: any = await this.orderRepository.editOne(datas);
-      return data;
-    } catch (error) {
-      throw error;
-    }
-  }
-
-  // async deleteOne(id: Order) {
-  //   try {
-  //     let data: any = await this.orderRepository.delete(id);
-  //     return data;
-  //   } catch (error) {
-  //     throw error;
-  //   }
-  // }
-
   async saveOne(datas: Order) {
     try {
       let data: any = await this.orderRepository.saveOne(datas);
